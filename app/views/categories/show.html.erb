@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+<div class="row">
+  <div class="col s6 m6">
+    <%= @category.name %>
+          <% if @category.projects.empty?%>
+            None
+          <%else%>
+            <div class="row">
+            <% @category.projects.each do |project| %>
+                <div class="col-4">
+                <div class="card mt-5" style="width: 18rem;">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/062.webp" class="card-img-top" alt="Chicago Skyscrapers"/>
+                  <div class="card-body">
+                    <h5 class="card-title"><%= project.name %></h5>
+                    <p class="card-text"><%= project.description %></p>
+                  </div>
+                  <ul class="list-group list-group-light list-group-small">
+                    <li class="list-group-item px-4">Location: <%= project.location %></li>
+                    <li class="list-group-item px-4">Price: <%= project.price %></li>
+                    <li class="list-group-item px-4">Type: <%= project.category.name %></li>
+                  </ul>
+                  <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                  </div>
+                </div>
+                </div>
+            <% end %>
+            </div>
+          <%end%>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

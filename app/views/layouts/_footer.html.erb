@@ -1,0 +1,8 @@
+<footer class="bg-dark text-center text-white fixed-bottom mt-5">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <p class="text-white disabled" href="#">Srishti Builders and Developers</p>
+    <%= link_to 'Admin Login', new_user_session_path, class: 'btn btn-xs btn-warning', title: 'Admin Login' %>
+    <%= link_to('Logout', destroy_user_session_path, class: 'btn btn-xs btn-warning', title: 'Logout', :method => :delete) %>
+  </div>
+</footer>
